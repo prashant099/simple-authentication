@@ -11,6 +11,12 @@ const RegisterForm = ({ onRegisterClick, error }) => {
     onRegisterClick(inputName, inputUsername, inputPassword);
   };
 
+  const onResetClick = () => {
+    setInputName("");
+    setInputUsername("");
+    setInputPassword("");
+  };
+
   return (
     <Container>
       <Segment>
@@ -32,7 +38,7 @@ const RegisterForm = ({ onRegisterClick, error }) => {
                 <Form.Field>
                   <label>Name</label>
                   <input
-                    vlue={inputName}
+                    value={inputName}
                     type="text"
                     placeholder="name"
                     onChange={(e) => setInputName(e.target.value)}
@@ -41,7 +47,7 @@ const RegisterForm = ({ onRegisterClick, error }) => {
                 <Form.Field>
                   <label>Username</label>
                   <input
-                    vlue={inputUsername}
+                    value={inputUsername}
                     type="text"
                     placeholder="username"
                     onChange={(e) => setInputUsername(e.target.value)}
@@ -50,7 +56,7 @@ const RegisterForm = ({ onRegisterClick, error }) => {
                 <Form.Field>
                   <label>Password</label>
                   <input
-                    vlue={inputPassword}
+                    value={inputPassword}
                     type="password"
                     placeholder="password"
                     onChange={(e) => setInputPassword(e.target.value)}
@@ -60,7 +66,9 @@ const RegisterForm = ({ onRegisterClick, error }) => {
                   <Button color="teal" onClick={(e) => onRegister(e)}>
                     Register
                   </Button>
-                  <Button color="red">Reset</Button>
+                  <Button color="red" onClick={onResetClick}>
+                    Reset
+                  </Button>
                 </Form.Field>
               </Form>
             </div>
